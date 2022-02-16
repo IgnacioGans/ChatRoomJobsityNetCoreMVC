@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Chat Room";
+}
+
+@section Styles{
+    <link href="~/css/chatroom.css" rel="stylesheet" />
+}
+<h2>Welcome to the Chat -[ @ViewBag.User ]</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <label>User: <span id="userInput"> @ViewBag.User</span></label>
+            @*<input type="text" id="userInput" class="form-control"/>*@
+            <label>Message</label>
+            <input type="text" id="messageInput" class="form-control" value="/stock=aapl.us"/>
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+        <div class="col-md-8">
+            <label>Create Room</label>
+            <input type="text" id="nameRoomInput" class="form-control" />
+            <input type="button" id="createRoomButton" value="Let's Create Room"/>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}

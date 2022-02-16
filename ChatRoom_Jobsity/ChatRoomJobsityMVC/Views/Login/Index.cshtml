@@ -1,0 +1,77 @@
+﻿@model ChatRoomJobsityMVC.Models.UsersModel.Users;
+@section Styles{
+    <link href="~/css/signin.css" rel="stylesheet" />
+
+}
+<div class="form-signin">
+    <ul class="nav nav-tabs nav-fill" id="JsAndCsharpLogin" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="csharp-login-tab" data-toggle="tab" href="#csharp" role="tab" aria-controls="csharp-login" aria-selected="true">Csharp Login</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="javascritp-login-tab" data-toggle="tab" href="#javascript" role="tab" aria-controls="javascritp-login" aria-selected="false">Javascript Login</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="JsAndCsharpLoginContent">
+        <div class="tab-pane fade show active" id="csharp" role="tabpanel" aria-labelledby="csharp-tab">
+            @using (Html.BeginForm("LoginT", "Login", FormMethod.Post, new { enctype = "multipart/form-data", @class = "" }))
+            {
+                <img class="mt-4 mb-4 mx-auto d-block" src="https://www.jobsity.com/themes/custom/jobsity/images/logo/brand-jobsity.svg" alt="jobsity Logo">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                @Html.TextBoxFor(m => m.username, new { @type = "text", @class = "form-control", placeholder = "user", required = "required" })
+                <label for="inputPassword" class="sr-only">Password</label>
+                @Html.TextBoxFor(m => m.password, new { @type = "password", @class = "form-control", placeholder = "password", required = "required" })
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
+            }
+        </div>
+        <div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="javascript-login-tab">
+            <form class="form-signin">
+                <img class="mt-4 mb-4 mx-auto d-block" src="https://www.jobsity.com/themes/custom/jobsity/images/logo/brand-jobsity.svg" alt="jobsity Logo">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+    <script>
+
+        // Url for the request
+        var url = '@Url.Action("Test1", "Login")';
+        let tryThisMethod = MethodTest(url);
+        console.log(tryThisMethod)
+        function MethodTest(url) {
+            // Making our request
+            fetch(url, { method: 'POST' })
+                .then(Result => Result.json())
+                .then(string => {
+
+                    // Printing our response
+                    console.log(string);
+
+                    // Printing our field of our response
+                    return `Test Controller Javascript Vanilla :  ${string.message}`;
+                })
+                .catch(errorMsg => { return "Message Not Found"; });
+            //return "Message Not Found"
+        }
+    </script>
+}
+
