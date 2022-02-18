@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gans1\\Documents\\remking\\jobsity-Chat\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\ChatRoom_Jobsity.csproj",
+      "projectUniqueName": "C:\\Users\\gans1\\Documents\\remking\\ChatRoomJobsityNetCoreMVC\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\ChatRoom_Jobsity.csproj",
       "projectName": "ChatRoom_Jobsity",
-      "projectPath": "C:\\Users\\gans1\\Documents\\remking\\jobsity-Chat\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\ChatRoom_Jobsity.csproj",
+      "projectPath": "C:\\Users\\gans1\\Documents\\remking\\ChatRoomJobsityNetCoreMVC\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\ChatRoom_Jobsity.csproj",
       "packagesPath": "C:\\Users\\gans1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gans1\\Documents\\remking\\jobsity-Chat\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\obj\\",
+      "outputPath": "C:\\Users\\gans1\\Documents\\remking\\ChatRoomJobsityNetCoreMVC\\ChatRoom_Jobsity\\ChatRoom_Jobsity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

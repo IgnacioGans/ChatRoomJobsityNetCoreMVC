@@ -32,17 +32,39 @@ namespace ChatRoomJobsityMVC.Controllers
         [HttpPost]
         public JsonResult ReadCSVFromURL(string dataStock)
         {
-
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create($"https://stooq.com/q/l/?s={dataStock}&f=sd2t2ohlcv&h&e=csv");
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(resp.GetResponseStream());
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            if (dataStock != null)
             {
-                csv.Context.RegisterClassMap<ModelClassMap>();
-                var records = csv.GetRecords<ModelCSV>();
-                ModelCSV[] array = records.Cast<ModelCSV>().ToArray();
-                return Json(array);
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create($"https://stooq.com/q/l/?s={dataStock}&f=sd2t2ohlcv&h&e=csv");
+                HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+                StreamReader reader = new StreamReader(resp.GetResponseStream());
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Context.RegisterClassMap<ModelClassMap>();
+                    var records = csv.GetRecords<ModelCSV>();
+                    ModelCSV[] array = records.Cast<ModelCSV>().ToArray();
+                    var objJson = new
+                    {
+                        statusCode = 200,
+                        statusMsg = "OK",
+                        statusBool = true,
+                        resultData = array
+                    };
+                    return Json(objJson);
+                }
             }
+            else
+            {
+                var objJson = new
+                {
+                    statusCode = 400,
+                    statusMsg = "FAIL",
+                    statusBool = false,
+                    resultData = "Could you, please, specific the stock code?"
+
+                };
+                return Json(objJson);
+            }
+
         }
     }
 }

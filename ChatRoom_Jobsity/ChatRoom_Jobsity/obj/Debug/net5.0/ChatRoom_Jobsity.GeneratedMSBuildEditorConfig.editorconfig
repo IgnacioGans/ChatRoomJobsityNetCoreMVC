@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = ChatRoom_Jobsity
-build_property.ProjectDir = C:\Users\gans1\Documents\remking\jobsity-Chat\ChatRoom_Jobsity\ChatRoom_Jobsity\
+build_property.ProjectDir = C:\Users\gans1\Documents\remking\ChatRoomJobsityNetCoreMVC\ChatRoom_Jobsity\ChatRoom_Jobsity\

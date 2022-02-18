@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FpaFo9Og1syNdoQGy5CmcjKdTRDmtEhACOVIUKj2EGmQMVZyoUnHmN4NaY6TywUbXtCCmzvQGOPWnt/IBqUzKw==",
+  "dgSpecHash": "8Hz5wIXyv2INCxfeAzuO8J+SF6b176H+NXF90PF6QeKjpKyvtmqF55T7/IRsgEdwOCa9QzppVgFWg21pWx5yhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gans1\\Documents\\remking\\jobsity-Chat\\ChatRoom_Jobsity\\ChatRoomJobsityMVC\\ChatRoomJobsityMVC.csproj",
+  "projectFilePath": "C:\\Users\\gans1\\Documents\\remking\\ChatRoomJobsityNetCoreMVC\\ChatRoom_Jobsity\\ChatRoomJobsityMVC\\ChatRoomJobsityMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gans1\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\gans1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"

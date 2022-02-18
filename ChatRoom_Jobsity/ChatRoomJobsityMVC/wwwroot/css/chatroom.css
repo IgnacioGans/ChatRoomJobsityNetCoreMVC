@@ -1,1 +1,48 @@
 ﻿
+body {
+    background: #a1a5e5;
+}
+.box-chat-message {
+    min-height: 18rem;
+    border: 1px solid gray;
+    max-height: 20rem;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; /* Important to reverse scroll*/
+    align-items: flex-end;
+}
+    .box-chat-message .message-wrapper{
+        width:100%;
+    }
+    .box-chat-message #messagesList {
+        max-height: 20rem;
+        padding: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        list-style-type: none;
+        width: 100%;
+    }
+.msg-from-user {
+    background: #4b4444;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    width: 20rem;
+    color: white;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    display: flex;
+    justify-self: flex-end;
+    flex-direction: column;
+}
+.current-user-message {
+    background: #262946;
+    align-self: flex-start;
+}
+.other-user {
+    align-self: flex-start;
+}
+.timestamp{
+    font-size:0.5rem;
+}

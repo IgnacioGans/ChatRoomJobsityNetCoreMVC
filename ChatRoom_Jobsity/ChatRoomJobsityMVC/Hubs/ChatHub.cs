@@ -10,9 +10,15 @@ namespace ChatRoomJobsityMVC.Hubs
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            var objMsg = new
+            {
+                message = message,
+                timestamp = Timestamp
+            };
+            await Clients.All.SendAsync("ReceiveMessage", user, objMsg);
         }
-        public async Task JoinRoom(string roomName)
+        public async Task JoinRoom(string user, string roomName)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
             await Clients.Group(roomName).SendAsync("Send", $"{Context.ConnectionId} has joined the group {roomName}.");
@@ -22,6 +28,28 @@ namespace ChatRoomJobsityMVC.Hubs
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
+
+        public  Task TestRoom(string user, string roomName)
+        {
+            //https://docs.microsoft.com/en-us/aspnet/signalr/overview/guide-to-the-api/handling-connection-lifetime-events
+            var dataGroup = Groups;
+            var dataClient = Clients;
+            var dataClientWithGroups = Clients.Group("Remking");
+            var dataClientWithGroups2 = dataClientWithGroups.SendAsync("ReceiveMessage", user, roomName);
+            return (Task)dataClientWithGroups2;
+        }
+
+        public Task Join()
+        {
+            return Groups.AddToGroupAsync(Context.ConnectionId, "foo");
+        }
+
+        public Task Send(string user, string msg, string roomName)
+        {
+            return Clients.Group(roomName).SendAsync("ReceiveMessage", user, msg);
+        }
+
+       
 
     }
 }
