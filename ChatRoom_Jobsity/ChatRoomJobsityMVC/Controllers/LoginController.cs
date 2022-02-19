@@ -35,22 +35,22 @@ namespace ChatRoomJobsityMVC.Controllers
             }
         }
         [HttpPost]
-        public JsonResult Login(string data)
+        public JsonResult LoginAjax(string user, string password)
         {
             Users dataUser = new Users();
-            Users UserObject = dataUser.DataJsonToObject(data);
+            //Users UserObject = dataUser.DataJsonToObject(dataLogin);
 
             var u = new Repository_users();
             var ua = u.UserList();
-            var ue = ua.Where(ua => ua.username.Equals(UserObject.username));
-            var up = ue.Where(p => p.password.Equals(UserObject.password));
+            var ue = ua.Where(ua => ua.username.Equals(user));
+            var up = ue.Where(p => p.password.Equals(password));
             if (up.Count() == 1)
             {
                 var dataResponse = new { 
                     StatusCode = "OK",
                     Msg = "Login Success"
                 };
-                HttpContext.Session.SetString(SessionName, dataUser.username);
+                HttpContext.Session.SetString(SessionName, user);
                 return Json(dataResponse);
             }
             else

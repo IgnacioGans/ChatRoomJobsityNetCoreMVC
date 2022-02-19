@@ -18,6 +18,17 @@ namespace ChatRoomJobsityMVC.Hubs
             };
             await Clients.All.SendAsync("ReceiveMessage", user, objMsg);
         }
+        public async Task SendMessageGroups(string user, string message, string group)
+        {
+            var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            var objMsg = new
+            {
+                message = message,
+                timestamp = Timestamp
+            };
+            await Clients.Group(group).SendAsync("ReceiveMessageGroup", user, objMsg);
+            //await Clients.All.SendAsync("ReceiveMessage", user, objMsg);
+        }
         public async Task JoinRoom(string user, string roomName)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, roomName);

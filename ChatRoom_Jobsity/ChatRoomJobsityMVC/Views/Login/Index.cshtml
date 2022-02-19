@@ -9,7 +9,7 @@
             <a class="nav-link active" id="csharp-login-tab" data-toggle="tab" href="#csharp" role="tab" aria-controls="csharp-login" aria-selected="true">Csharp Login</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="javascritp-login-tab" data-toggle="tab" href="#javascript" role="tab" aria-controls="javascritp-login" aria-selected="false">Javascript Login</a>
+            <a class="nav-link" id="javascritp-login-tab" data-toggle="tab" href="#javascript" role="tab" aria-controls="javascritp-login" aria-selected="false">Javascript Login (Ajax)</a>
         </li>
     </ul>
     <div class="tab-content" id="JsAndCsharpLoginContent">
@@ -18,7 +18,7 @@
             {
                 <img class="mt-4 mb-4 mx-auto d-block" src="https://www.jobsity.com/themes/custom/jobsity/images/logo/brand-jobsity.svg" alt="jobsity Logo">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label for="inputEmail" class="sr-only">Email address</label>
+                <label for="inputEmail" class="sr-only">User Name</label>
                 @Html.TextBoxFor(m => m.username, new { @type = "text", @class = "form-control", placeholder = "user", required = "required" })
                 <label for="inputPassword" class="sr-only">Password</label>
                 @Html.TextBoxFor(m => m.password, new { @type = "password", @class = "form-control", placeholder = "password", required = "required" })
@@ -31,16 +31,11 @@
             <form class="form-signin">
                 <img class="mt-4 mb-4 mx-auto d-block" src="https://www.jobsity.com/themes/custom/jobsity/images/logo/brand-jobsity.svg" alt="jobsity Logo">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <label for="inputEmail" class="sr-only">User</label>
+                <input type="text" id="user2" class="form-control" placeholder="Username" required="" autofocus="">
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <input type="password" id="pass2" class="form-control" placeholder="Password" required="">
+                <button id="sendForm" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
                 <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
             </form>
         </div>
@@ -51,8 +46,8 @@
 
 
 @section Scripts{
+    <script src="~/js/login.js"></script>
     <script>
-
         // Url for the request
         var url = '@Url.Action("Test1", "Login")';
         let tryThisMethod = MethodTest(url);

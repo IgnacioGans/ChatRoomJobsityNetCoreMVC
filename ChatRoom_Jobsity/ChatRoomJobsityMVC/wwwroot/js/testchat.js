@@ -1,12 +1,11 @@
-﻿document.getElementById("createRoomButton").addEventListener("click", function (event) {
-    var user = document.getElementById("userInput").innerText;
-    //var nameGroup = document.getElementById("nameRoomInput").value;
-    var nameGroup = "RemkingCreateRoom";
-    connection.invoke("JoinRoom", user, nameGroup).catch(function (err) {
-        return console.error(err.toString());
-    });
-    event.preventDefault();
-});
+﻿////document.getElementById("createRoomButtonTest").addEventListener("click", function (event) {
+////    var user = document.getElementById("userInput").innerText;
+////    var nameGroup = "RemkingCreateRoom";
+////    connection.invoke("JoinRoom", user, nameGroup).catch(function (err) {
+////        return console.error(err.toString());
+////    });
+////    event.preventDefault();
+////});
 
 //document.getElementById("testChatButton").addEventListener("click", function (event) {
 //    var user = document.getElementById("userInput").innerText;

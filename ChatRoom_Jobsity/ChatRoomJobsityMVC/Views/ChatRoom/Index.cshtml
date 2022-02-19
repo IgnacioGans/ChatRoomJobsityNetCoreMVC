@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-md-8">
             <label>User: <span id="userInput"> @ViewBag.User</span></label>
-            
+
             <hr />
-            
+
             <ul class="nav nav-tabs" id="ListChatTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="public-chat-tab" data-toggle="tab" href="#public-chat" role="tab" aria-controls="public-chat" aria-selected="true">Public Chat</a>
@@ -41,8 +41,8 @@
             @*<button type="button" id="testChatButton" class="btn btn-primary">Test Room</button>*@
             <hr />
             <h3>List Room</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Empty Room Chat</li>
+            <ul id="list-name-room" class="list-group">
+                <li class="list-group-item default-list">Empty Room Chat</li>
             </ul>
         </div>
     </div>
@@ -51,5 +51,6 @@
 @section Scripts{
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/chat.js"></script>
-    <script src="~/js/testchat.js"></script>
+    <script src="~/js/chat-room.js"></script>
+    @*<script src="~/js/testchat.js"></script>*@
 }
