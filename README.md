@@ -15,7 +15,7 @@
 - Make sure you have _Visual Studio 2019_
 - Run the file _ChatRoom_Jobsity.sln_
 - And just hit the button play on Visual Studio to run the project.
-- Two user can enter on the chat: Jobsity and Admin with password jobsity.
+- Two users can enter the chat: Jobsity and Admin with password jobsity.
 - Open another browser and copy the same link to run another user and enter another chat.
 - and Try to Send Message between of two browser! XD
 
@@ -23,10 +23,10 @@
 ## About the challenge
 
 It's a challenge that jobsity give me to do the Chat Room for five (5) days.
-It's part of the interview to apply a job. 
-I choose Net Core MVC for this challenge, It's my first time using SignalR (i heard before with my last job).
-So i have to read very fast the documentation of SignalR to understand the basic setting or basic configuration to create this chat on the project.
+It's the last part of the interview to apply for an open job position. 
+I choose Net Core MVC for this challenge, It's my first time using SignalR (i had heard about this in a previous job but never had used it before).
+Since this is my first time with SignalR, I had to read very fast the documentation of SignalR to understand the basic setting or basic configuration to create this chat in the project.
 
-## Conclussion
+## Conclusion
 
-it's was fun to do this challenge and more fun to create this chat, personally i was thinking this gonna be hard, but if you have a little basic knowledge about C# and some code to build a website, basically can do this exercise in a minimum functionality. I recommended to read more the documentation and try to build more complex functionality with SignalR.  
+It's was fun to do this challenge and even more fun to create this chat. Recommnendation for beginners: If you have basic knowledge about C# and understanding of html, css and javascript to build websites, then basically you can do this exercise in a minimum functionality. I recommended to read more the documentation and try to build more complex functionality with SignalR.  
